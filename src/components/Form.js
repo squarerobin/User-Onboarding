@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -113,53 +113,57 @@ const FormikLoginForm = withFormik({
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
     if (values.name === "john doe") {
-      
+
       setErrors({
         name: "That name is already taken"
       });
-      resetForm()
+
 
     }
-    
+
     if (values.email === "alreadytaken@atb.dev") {
       setErrors({
         email: "That email is already taken"
       });
     }
-    
+
     if (values.tos === false) {
       setErrors({
         tos: "The Terms of Service box is unchecked"
       });
     }
-    
-    if(!values.gender){
+
+    if (!values.gender) {
       setErrors({
         gender: "Please enter your gender"
       })
     }
 
-      
-   
+
+    if (!values.errors) {
+
       axios
         .post("https://reqres.in/api/users", values)
         .then(res => {
           console.log("Data was created successfully", res); // Data was created successfully and logs to console
-          
+
           setSubmitting(false);
         })
         .catch(err => {
           console.err(err); // There was an error creating the data and logs to console
           setSubmitting(false);
         });
-    
-      }
-    
-    
-    
-    
-    
-  
+    }
+
+
+
+  }
+
+
+
+
+
+
 })(MyForm);
 
 export default FormikLoginForm;
