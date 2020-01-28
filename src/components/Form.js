@@ -80,7 +80,7 @@ const FormikLoginForm = withFormik({
       name: name || "",
       email: email || "",
       password: password || "",
-      gender: gender || "not specified",
+      gender: gender || "Choose an option",
       msg: msg || "",
       tos: tos || false
     };
