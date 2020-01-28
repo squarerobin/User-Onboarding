@@ -155,8 +155,6 @@ const FormikLoginForm = withFormik({
         });
     }
 
-
-
   }
 
 
