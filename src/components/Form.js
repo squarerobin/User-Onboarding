@@ -57,19 +57,9 @@ function MyForm({ values, errors, touched, isSubmitting }) {
           Submit
         </button>
       </Form>
-      {users.map(user => {
-        return (
-          <div className="output">
-            <ul>
-              <li>`Name: ${user.name}`</li>
-              <li>`Email: ${user.email}`</li>
-              <li>`Password: ${user.password}`</li>
-              <li>`Gender: ${user.gender}`</li>
-            </ul>
-            <p>`Message: ${user.msg}`</p>
-          </div>
-        );
-      })}
+      
+     
+     
     </div>
   );
 }
