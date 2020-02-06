@@ -57,9 +57,6 @@ function MyForm({ values, errors, touched, isSubmitting }) {
           Submit
         </button>
       </Form>
-      
-     
-     
     </div>
   );
 }
@@ -103,15 +100,13 @@ const FormikLoginForm = withFormik({
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
     if (values.name === "john doe") {
-
       setErrors({
         name: "That name is already taken"
       });
-
-
     }
-
-    if (values.email === "alreadytaken@atb.dev") {
+    // Edit: stretch: I used alreadytaken@atb.dev instead of waffle@syrup.com
+    // changing it now to match
+    if (values.email === "waffle@syrup.com") {
       setErrors({
         email: "That email is already taken"
       });
@@ -126,12 +121,10 @@ const FormikLoginForm = withFormik({
     if (!values.gender) {
       setErrors({
         gender: "Please enter your gender"
-      })
+      });
     }
 
-
     if (!values.errors) {
-
       axios
         .post("https://reqres.in/api/users", values)
         .then(res => {
@@ -144,14 +137,7 @@ const FormikLoginForm = withFormik({
           setSubmitting(false);
         });
     }
-
   }
-
-
-
-
-
-
 })(MyForm);
 
 export default FormikLoginForm;
