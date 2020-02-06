@@ -5,20 +5,20 @@ import FormikLoginForm from "./components/Form";
 
 function App() {
 
-  const [users, setUsers] = useState([])
+  const [users] = useState([])
   return (
     <div className="App">
       <FormikLoginForm />
 
-      {users.map((data) => (
+      {users.map((user) => (
         <div className="output">
-          <ul key={data.id}>
-            <li>`Name: ${data.name}`</li>
-            <li>`Email: ${data.email}`</li>
-            <li>`Password: ${data.password}`</li>
-            <li>`Gender: ${data.gender}`</li>
+          <ul key={user.id}>
+            <li>`Name: ${user.name}`</li>
+            <li>`Email: ${user.email}`</li>
+            <li>`Password: ${user.password}`</li>
+            <li>`Gender: ${user.gender}`</li>
           </ul>
-          <p>`Message: ${data.msg}`</p>
+          <p>`Message: ${user.msg}`</p>
         </div>
       ))}
     </div>
