@@ -104,8 +104,7 @@ const FormikLoginForm = withFormik({
         name: "That name is already taken"
       });
     }
-    // Edit: stretch: I used alreadytaken@atb.dev instead of waffle@syrup.com
-    // changing it now to match
+    // Stretch:
     if (values.email === "waffle@syrup.com") {
       setErrors({
         email: "That email is already taken"
