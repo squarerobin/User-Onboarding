@@ -132,7 +132,7 @@ const FormikLoginForm = withFormik({
           setSubmitting(false);
         })
         .catch(err => {
-          console.log(err); // There was an error creating the data and logs to console
+          console.log("There was an error creating the data", err); // There was an error creating the data and logs to console
           setSubmitting(false);
         });
     }
